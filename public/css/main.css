@@ -1,0 +1,24 @@
+/* the styles for the main page body elements */
+body {
+    padding: 20px;
+    background-image: url(/images/w2.jpg);
+    background-size:cover;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+main section{
+    float: right;
+}
+main h1{
+    font-weight: normal;
+    text-align: center;
+    color:brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main p{
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 15px;
+    background-color: lightgreen;
+    padding: 10px;
+}
+

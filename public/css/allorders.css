@@ -1,0 +1,23 @@
+body{
+    background-color:lightyellow;
+}
+table{
+    border: 2px solid green;
+    text-align: center;
+    margin:10px 0px;
+    border-collapse: collapse;
+    color:brown;
+    width: 100%;
+}
+td,th{
+    border:2px solid green;
+    padding: 5px 4px;
+}
+th{
+    font-weight: bold;
+    font-family:Franklin Gothic Medium;
+    background-color: lightgreen;
+}
+header h3{
+    color:red !important;
+}

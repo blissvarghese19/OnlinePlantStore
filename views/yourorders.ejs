@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Orders</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/allorders.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+<body>
+    <!--header of the body-->
+    <header>
+        <!--image is added which is the logo-->
+        <img src="images/logoplant.png" alt="plant logo">
+        <!--headings added with different size-->
+        <h1>Green Basket</h1>
+        <h3>To Plant A Garden Is To Believe In Tomorrow</h3>
+        <%- include('layouts/nav'); -%>
+    </header>
+    <main>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Province</th>
+                        <th>Post code</th>
+                        <th>CardNo</th>
+                        <th>Peperomia Qty</th>
+                        <th>Stromanthe Qty</th>
+                        <th>Aglaonema Qty</th>
+                        <th>Areca Qty</th>
+                        <th>Shipping charge</th>
+                        <th>Total Cost</th>
+                        <th>Total Tax</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var order of orders){
+                        %>
+                        <tr>
+                            <td><%= order.custName  %></td>
+                            <td><%= order.custEmail %></td>
+                            <td><%= order.custPhone %></td>
+                            <td><%= order.custAddress %></td>
+                            <td><%= order.custCity %></td>
+                            <td><%= order.custProvince %></td>
+                            <td><%= order.custPostCode %></td>
+                            <td><%= order.custCardNo %></td>
+                            <td><%= order.peperomiaQty %></td>
+                            <td><%= order.stromantheQty %></td>
+                            <td><%= order.aglaonemaQty %></td>
+                            <td><%= order.arecaQty %></td>
+                            <td>$<%= order.shippingCharge %></td>
+                            <td>$<%= order.totalCost.toFixed(2) %></td>
+                            <td>$<%= order.totalTax.toFixed(2) %></td>
+                            <td>$<%= order.total.toFixed(2) %></td></tr>
+
+                        <%
+                    }
+                    %>
+                   
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+</body>
+<%- include('layouts/footer'); -%>

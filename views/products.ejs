@@ -1,0 +1,228 @@
+<!--product quantities declaration-->
+<%
+  var peperomiaQty;
+  var stromantheQty;
+  var aglaonemaQty;
+  var arecaQty;
+  var totalCost;
+  var custName      = '';
+  var custEmail     = '';
+  var custPhone     = '';
+  var custAddress   = '';
+  var custCity      = '';
+  var custProvince  = '';
+  var custPostCode  = '';
+  var cardNo        = '';
+  var cardExpMonth  = '';
+  var cardExpYear   = '';
+  var deliveryTime  = '';
+<!--Product error variable declaration-->
+  var peperomiaError       = '';
+  var stromantheError      = '';
+  var aglaonemaError       = '';
+  var arecaError           ='';
+  var custNameError        = '';
+  var custAddressError     = '';
+  var custCityError        = '';
+  var custPostCodeError    = '';
+  var custProvinceError    = '';
+  var custPhoneError       = '';
+  var custEmailError       = '';
+  var deliveryTimeError    = '';
+  var creditCardNoError    = '';
+  var creditCardMonthError = '';
+  var creditCardYearError  = '';
+
+  if(typeof(er) != 'undefined')
+  {
+    for(var error of er)
+    { 
+      switch(error.param)
+      {
+        case 'peperomiaQty':      peperomiaQty = error.value;
+                                  peperomiaError = error.msg;
+                                  break;
+        case 'stromantheQty':     stromantheQty = error.value;
+                                  stromantheError = error.msg;
+                                  break;
+        case 'aglaonemaQty':      aglaonemaQty = error.value;
+                                  aglaonemaError = error.msg;
+                                  break;
+        case 'arecaError':        aglaonemaQty = error.value;
+                                  arecaError = error.msg;
+                                  break;
+        case 'custName':          custName = error.value;
+                                  custNameError = error.msg;
+                                  break;
+        case 'custPostCode':      custPostCode = error.value;
+                                  custPostCodeError = error.msg;
+                                  break;
+        case 'custAddress':       custAddress = error.value;
+                                  custAddressError = error.msg;
+                                  break;
+        case 'custCity':          custCity = error.value;
+                                  custCityError = error.msg;
+                                  break;
+        case 'custProvince':      custProvince = error.value;
+                                  custProvinceError = error.msg;
+                                  break;
+        case 'custPhone':         custPhone = error.value;
+                                  custPhoneError = error.msg;
+                                  break;
+        case 'custEmail':         custEmail = error.value;
+                                  custEmailError = error.msg;
+                                  break;
+        case  'deliveryTime':     deliveryTime = error.value;
+                                  deliveryTimeError = error.msg;
+                                  break;
+        case 'cardNo':            cardNo = error.value;
+                                  creditCardNoError = error.msg;
+                                  break;
+        case 'cardExpMonth':      cardExpMonth = error.value;
+                                  creditCardMonthError = error.msg;
+                                  break;
+        case 'cardExpYear':       cardExpYear = error.value;
+                                  creditCardYearError = error.msg;
+                                  break;
+      }
+    }
+  }
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/prod.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+<body>
+    <header>
+         <!--image is added which is the logo-->
+         <img src="images/logoplant.png" alt="plant logo">
+         <!--headings added with different size-->
+         <h1>Green Basket</h1>
+        <h3>To Plant A Garden Is To Believe In Tomorrow</h3>
+         <%- include('layouts/nav'); -%>
+    </header>
+        <!--main part of the body-->
+    <main>
+        <section>
+          <form action="receipt" method="POST">
+          <div class="products">
+            <h1>Shop Your Favourite</h1>
+                <div class="wrapper">
+                    <img class="prodImg" src="images/peperomia_green_plant.jpg" alt="peperomia green plant">
+                    <label for="peperomia">Peperomia Green Plant</label>
+                    <label for="peperomiaPrice">$10</label>
+                    <input type="text" name="peperomiaQty" value="<%= peperomiaQty %>">
+                    <p class="error"><%= peperomiaError %></p>
+                </div>
+                <div class="wrapper">
+                    <img class="prodImg" src="images/Stromanthe_Triostart_Plant.jpg" alt="Stromanthe Triostar Plant">
+                    <label for="stromanthe">Stromanthe Triostar Plant</label>
+                    <label for="stromanthePrice">$12</label>
+                    <input type="text" name="stromantheQty" value="<%= stromantheQty %>">
+                    <p class="error"><%= stromantheError %></p>
+                </div>
+                <div class="wrapper">
+                    <img class="prodImg" src="images/Aglaonema_RedLipstick_Plant.jpg" alt="Aglaonema RedLipstick Plant">
+                    <label for="aglaonema">Aglaonema Red Lipstick Plant</label>
+                    <label for="aglaonemaPrice">$14</label>
+                    <input type="text" name="aglaonemaQty" value="<%= aglaonemaQty %>">
+                    <p class="error"><%= aglaonemaError %></p>
+                </div>
+                <div class="wrapper">
+                  <img class="prodImg" src="images/Areca_Palm_plant.jpg" alt="Areca Palm Plant">
+                  <label for="areca">Areca Palm Plant</label>
+                  <label for="arecaPrice">$8</label>
+                  <input type="text" name="arecaQty" value="<%= arecaQty %>">
+                  <p class="error"><%= arecaError %></p>
+              </div>
+            </div>
+            <div class="customer">
+              <div class="main">
+                <div class="wrapper">
+                    <label for="custName">Customer Name</label>
+                    <input type="text" id="custName" name="custName" placeholder="Full Name" value="<%= custName %>">
+                    <p class="error"><%= custNameError %></p>
+                </div>
+                <div class="wrapper">
+                    <label for="custEmail">Email</label>
+                    <input type="text" id="custmail" name="custEmail" placeholder="test@test.com" value="<%= custEmail %>">
+                    <p class="error"><%= custEmailError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="custPhone">Phone Number</label>
+                    <input type="text" id="custPhone" name="custPhone" placeholder="123-123-1234" value="<%= custPhone %>">
+                    <p class="error"><%= custPhoneError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="custAddress">Address</label>
+                    <input type="text" id="custAddress" name="custAddress" placeholder="Address" value="<%= custAddress %>">
+                    <p class="error"><%= custAddressError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="custCity">City</label>
+                    <input type="text" id="custCity" name="custCity" placeholder="City" value="<%= custCity %>">
+                    <p class="error"><%= custCityError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="custPostCode">Post Code</label>
+                    <input type="text" id="custPostCode" name="custPostCode" placeholder="X9X 9X9" value="<%= custPostCode %>">
+                    <p class="error"><%= custPostCodeError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="custProvince">Province</label>
+                        <select name="custProvince" id="custProvince">
+                            <option value="">----- Select -----</option>
+                            <option value="AB">AB</option>
+                            <option value="NT">NT</option>
+                            <option value="NU">NU</option>
+                            <option value="YT">YT</option>
+                            <option value="ON">ON</option>
+                            <option value="BC">BC</option>
+                            <option value="MB">MB</option>
+                            <option value="QC">QC</option>
+                            <option value="SK">SK</option>
+                        </select> 
+                    <p class="error"><%= custProvinceError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="cardNo">Credit Card Number</label>
+                    <input type="text" id="cardNo" name="cardNo" placeholder="XXXX-XXXX-XXXX-XXXX" value="<%= cardNo %>">
+                    <p class="error"><%= creditCardNoError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="cardExpMonth">Card Expiry Month</label>
+                    <input type="text" id="cardExpMonth" name="cardExpMonth" placeholder="JAN" value="<% cardExpMonth %>">
+                    <p class="error"><%= creditCardMonthError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="cardExpYear">Card Expiry Year</label>
+                    <input type="text" id="creditCardYear" name="cardExpYear" placeholder="YYYY" value="<% cardExpYear %>">
+                    <p class="error"><%= creditCardYearError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <label for="deliveryTime">Delivery Time</label>
+                        <select name="deliveryTime" id="deliveryTime">
+                            <option value="">----- Select -----</option>
+                            <option value="1">1 day</option>
+                            <option value="2">2 days</option>
+                            <option value="3">3 days</option>
+                        </select> 
+                    <p class="error"><%= deliveryTimeError %></p>
+                  </div>
+                  <div class="wrapper">
+                    <input class="proceed" type="submit" value="PLACE ORDER">
+                  </div>
+                </div>
+              </div>
+            </form>
+        </section>
+    </main>
+    <%- include('layouts/footer'); -%>

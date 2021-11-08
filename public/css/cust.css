@@ -1,0 +1,62 @@
+/*stylings for the customer page*/
+body {
+    padding: 20px;
+    background-image: url(/images/11.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family:'Courier New', Courier, monospace;
+}
+section h3{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: blueviolet;
+}
+main .wrapper{
+    margin: 10px;
+    padding-top: 1px;
+    text-align: center;
+}
+main .submission{
+    text-align: center;
+}
+main .submission input{
+    width:150px;
+    height: 50px;
+    border: 2px solid blueviolet;
+    background-color: brown;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 10px 10px 10px 10px;
+}
+main .wrapper label{
+    display: inline-block;
+    width: 200px;
+    font-size: 20px;
+    font-weight:bold;
+    font-family:cursive;
+    text-align: left;
+}
+main .wrapper input,select{
+    background-color: transparent;
+    border: 1px solid blueviolet;
+    color: black;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+main .wrapper select{
+    width:255px;
+    margin-left: 2px;
+}
+.continue {
+    text-align: center;
+    border: 5px solid blueviolet;
+    width:500px;
+    height: 120px;
+    margin-left: 350px;
+    margin-top: 120px;
+    padding-top: 10px;
+}
+.wrapper p{
+    color: red;
+    margin-left:180px;
+}

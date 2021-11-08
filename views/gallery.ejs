@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/gallery.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+<body>
+    <!--header of the body-->
+    <header>
+        <!--image is added which is the logo-->
+        <img src="images/logoplant.png" alt="plant logo">
+        <!--headings added with different size-->
+        <h1>Green Basket</h1>
+        <h3>To Plant A Garden Is To Believe In Tomorrow</h3>
+        <%- include('layouts/nav'); -%>
+    </header>
+    <!--main part of the body-->
+<main>
+    <!--main with section which has 8 divisions for different images-->
+    <section>
+        <form action="gallery" method="POST">
+        <!--div with images and link attached to it so customer can click on image and directlt go to shop page-->
+        <div class="gallery">
+            <a href ="/product"><img src="/images/peperomia_green_plant.jpg" alt="Green gallery - Peperomia"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/Stromanthe_Triostart_Plant.jpg" alt="Green gallery - Stromanthe"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/Aglaonema_RedLipstick_Plant.jpg" alt="Green gallery - Aglaonema"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/Areca_Palm_plant.jpg" alt="Green gallery - Areca"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/brokenheart_Plant.png" alt="Green gallery - BrokenHeart"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/jadePlant.png" alt="Green gallery - jade Plant"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/cottonCandy.png" alt="Green gallery - cottonCandy"></a>
+        </div>
+        <div class="gallery">
+            <a href ="/product"><img src="/images/FittoniaPlant.png" alt="Green gallery - Fittonia"></a>
+        </div>
+    </form>
+    </section>
+
+</main>
+</body>
+<%- include('layouts/footer'); -%>

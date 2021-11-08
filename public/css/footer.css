@@ -1,0 +1,27 @@
+/*footer part of the page is set with clear both*/
+footer{
+    clear: both;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: limegreen;
+    color: white;
+    text-align: center;
+    height: 30px;
+}
+/*styles for the paragraph inside the footer*/
+footer p{
+    color:white;
+    padding-top: 0em;
+	padding-bottom: 1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+/*style for displaying error*/
+.error{
+    font-size: 16px;
+    color: limegreen;
+    text-align: center;
+    font-family: cursive;
+    font-style: italic;
+}

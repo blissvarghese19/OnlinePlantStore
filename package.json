@@ -1,0 +1,22 @@
+{
+  "name": "a4_onlineplantstore",
+  "version": "1.0.0",
+  "description": "online plant store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "online",
+    "plant",
+    "store"
+  ],
+  "author": "Bliss Kizhuvallil Varghese",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "mongoose": "*"
+  }
+}

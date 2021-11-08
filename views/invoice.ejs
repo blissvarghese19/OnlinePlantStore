@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/invoice.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+<body>
+   <!--header of the body-->
+   <header>
+   <!--image is added which is the logo-->
+   <img src="images/logoplant.png" alt="plant logo">
+   <!--headings added with different size-->
+   <h1>Green Basket</h1>
+  <h3>To Plant A Garden Is To Believe In Tomorrow</h3>
+    <%- include('layouts/nav'); -%>
+</header>
+<!--main part of the body-->
+    <main>
+        <section>
+            <%if(totalCost < 0)
+          {%>
+            <div class="continue"><h2>make a purchase  to continue</h2>
+              <a href="/product">Click to go back to purchase</a></div>
+          <%}
+          else
+          {%>
+            <!--Customer details display-->
+            <h1>Thank You For Your Love With Green</h1>
+            <div class="customer">
+                <div class="customerData">
+                    <table>
+                        <tr><th>Customer Name: </th>
+                            <td><%= custName %></td>
+                        </tr>
+                        <tr><th>Email:</th>
+                            <td><%= custEmail %></td>
+                        </tr>
+                        <tr><th>Phone:</th>
+                            <td><%= custPhone %></td>
+                        </tr>
+                        <tr><th> Delivery Address: </th>
+                            <td><%= custAddress %>,<%= custCity %>,<%= custProvince %>,<%= custPostCode %></td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+            <!--invoice generated display-->
+            <div class="invoiceData">
+                <% if(prodList.length > 0)
+                {%>
+                    <table>
+                        <th class="invHead">Item</th>
+                        <th class="invHead">Price</th>
+                        <th class="invHead">Quantity</th>
+                        <th class="invHead">Total</th>
+                        <% for(var row=0; row < prodList.length; row++)
+                        { %>
+                            <tr>
+                                <% for(var col=0; col < 4; col++)
+                                { %>
+                                    <td class="invCol"><%= prodList[row][col] %></td>
+                                    <%
+                                }
+                                %>
+                            </tr>
+                            <%
+                        }
+                        %>
+                        <tr><td class="right" colspan="3"> Shipping Charge</td><td class="invCol">$<%= shippingCharge %></td></tr>
+                        <tr><td class="right" colspan="3"> Sub Total</td><td class="invCol">$<%= totalCost.toFixed(2) %></td></tr>
+                        <tr><td class="right" colspan="3">Taxes @ 13%</td><td class="invCol">$<%= totalTax.toFixed(2) %></td></tr>
+                        <tr><td class="right" colspan="3">Total</td><td class="invCol">$<%= total.toFixed(2) %></td></tr>
+                    </table>
+                    <%
+                }
+            }
+               %>
+                </div>
+                <p>Purchase Again! </p>
+            </div>
+        </section>
+    </main>
+    <%- include('layouts/footer'); -%>

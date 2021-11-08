@@ -1,0 +1,29 @@
+/*work done by Bliss Kizhuvallil Varghese For Web Design And Development Assignment 03*/
+body{
+    background-image: url(/images/bggallery.jpg);
+    background-size: cover;
+}
+/*margin set for section*/
+section{
+    margin-left: 120px;
+}
+/*margin,border and width height applied for gallery images*/
+div.gallery{
+    margin: 45px;
+    border: 1px solid slateblue;
+    float: left;
+    width: 180px;
+    height:110px;
+}
+/*border effect for hover*/
+div.gallery:hover{
+    border: 1px solid #777;
+}
+/*set up image height and width*/
+div.gallery img{
+    width: 180px;
+    height: 110px;
+}
+header h1{
+    margin-top: 10px;
+}

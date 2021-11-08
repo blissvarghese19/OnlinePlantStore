@@ -1,0 +1,69 @@
+/*Developed by Bliss Kizhuvallil Varghese | Student Id : 8733343 | For Web design and development Assignment 04*/
+/*reset selector*/
+*{
+	margin: 0em;
+	padding: 0em;
+}
+header{
+    height: 100px;
+}
+/*image of the header set to float left and adjust height and width*/
+header img{
+    float: left;
+    width:250px;
+    margin-top: -30px;
+    height: 120px;
+}
+/*h2 inside the header is styled*/
+header h1{
+    text-transform: uppercase;
+    font-family: Impact;
+    color:green;
+    margin-top: 18px;
+    margin-left: 290px;
+    font-weight: bold;
+    text-shadow: 3px 3px lawngreen;
+}
+/*h4 inside the header style with font and margin*/
+header h3{
+    text-transform: capitalize;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 200px;
+    color:black;
+    text-shadow: 1px 1px yellowgreen;
+    font-size: 22px;
+    font-style: italic;
+}
+/*styles for top menu which is displayed in all pages*/
+.top_menu{
+    background-color:transparent;
+    border: 1px solid white;
+    box-shadow: 0 0 10px #2c2c2c;
+    color: chocolate;
+    border-radius: 20px;
+    height: 40px;
+    width:1050px;
+    float: right;
+    margin-top:-35px;
+}
+.top_menu ul{
+    list-style-type: none;
+    text-align: right;
+    margin-right: 70px;
+}
+.top_menu ul li{
+    display: inline-block;
+    width: fit-content;
+}
+.top_menu ul li:hover,a:focus{
+    background-color: lime;
+}
+.top_menu ul li a{
+    color:olive;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: block;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
